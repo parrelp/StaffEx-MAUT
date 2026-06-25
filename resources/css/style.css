@@ -1,0 +1,267 @@
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#alert-message {
+    position: fixed;
+    width: 25%;
+    left: 10%;
+    top: 20px;
+    z-index: 999;
+    animation: slideInLeft 0.7s ease-out;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* From Uiverse.io by suleymanlaarabid
+ev */ 
+.candidates-list .card-candidate {
+  position: relative;
+  overflow: hidden;
+  height: 60vh;
+  background: #166AC0;
+  background: linear-gradient(90deg, rgba(22, 106, 192, 1) 0%, rgba(28, 36, 89, 1) 100%);
+  transition: all 0.4s;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+}
+
+
+
+.candidates-list .card-candidate:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1);
+  box-shadow: 0px 0px 10px 5px  rgba(255, 255, 255, 0.705);
+  background: #FFFFFF;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+.candidates-list .card-candidate:active{
+  border: 5px solid #64AAFF;
+}
+
+.candidates-list .card-candidate .first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+
+/* Tampilan isi kartu awal (foto + nama vertikal + status) */
+.candidates-list .card-candidate .first-content .candidate-img {
+  width: 90%;
+  object-fit: cover;
+  position: absolute;
+  left: -50px;
+  bottom: -10px;
+  z-index: 0;
+}
+
+.candidates-list .card-candidate .first-content .name-vertical {
+  position: absolute;
+  right: 2vh;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: right center;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 4rem;
+  writing-mode: vertical-rl;
+  z-index: 1;
+  letter-spacing: 2px;
+}
+
+.candidates-list .card-candidate .first-content .name-horizontal {
+  position: absolute;
+  right: 2vh;
+  top: 15%;
+  transform: translateY(-50%);
+  transform-origin: right center;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 4rem;
+  z-index: 1;
+  letter-spacing: 2px;
+}
+
+.candidates-list .card-candidate .first-content .ranking {
+  position: absolute;
+  left: 3vh;
+  top: 1vh;
+  transform-origin: right center;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 6rem;
+  opacity: 50%;
+  z-index: 1;
+  letter-spacing: 2px;
+}
+
+.candidates-list .card-candidate .first-content .status-box {
+  width: 100%;
+  left: 50%;
+  pad: 1rem 4rem;
+  height: 3.5rem;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.candidates-list .card-candidate .first-content .status-box .divide {
+  position: relative;
+  width: 20%;
+  height: 2px; /* agar tinggi elemen sesuai garis */
+  background: #CACACA; /* transparan agar tidak ganggu background lain */
+}
+
+.candidates-list .card-candidate:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+
+.candidates-list .card-candidate .second-content {
+  position: relative;
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: all 0.4s;
+  font-size: 0px;
+  transform: scale(-1);
+}
+
+.candidates-list .card-candidate:hover .second-content {
+  opacity: 1;
+  height: 100%;
+  font-size: 1.8rem;
+  transform: scale(1);
+}
+
+
+.candidates-list .card-candidate .second-content .corner-elements span {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border: 4px solid rgb(255, 255, 255);
+}
+
+.candidates-list .card-candidate .second-content .corner-elements span:nth-child(1) {
+  top: 27px;
+  left: 27px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.candidates-list .card-candidate .second-content .corner-elements span:nth-child(2) {
+  top: 27px;
+  right: 27px;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.candidates-list .card-candidate .second-content .corner-elements span:nth-child(3) {
+  bottom: 27px;
+  left: 27px;
+  border-right: 0;
+  border-top: 0;
+}
+
+.candidates-list .card-candidate .second-content .corner-elements span:nth-child(4) {
+  bottom: 27px;
+  right: 27px;
+  border-left: 0;
+  border-top: 0;
+}
+
+.candidates-list .card-candidate .second-content .plus-elements span {
+  position: absolute;
+  width: 71px;
+  height: 71px;
+  border: 4px solid rgb(255, 255, 255);
+}
+
+.candidates-list .card-candidate .second-content .plus-elements span:nth-child(1) {
+  top: 119px;
+  left: 50%;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.candidates-list .card-candidate .second-content .plus-elements span:nth-child(2) {
+  top: 50%;
+  right: 65px;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.candidates-list .card-candidate .second-content .plus-elements span:nth-child(3) {
+  bottom: 112px;
+  left: 50%;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.candidates-list .card-candidate .second-content .plus-elements span:nth-child(4) {
+  bottom: 50%;
+  left: 65px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+.candidates-list .card-candidate .second-content .corner-elements span {
+  transition: all 0.3s ease;
+}
+
+#card-candidate:hover .corner-elements span {
+  border-color: rgb(255, 255, 255);
+}
+
+
+
+
+/* CANDIDATE RANK */
+
+.other-list .card-other-candidate {
+  background: #FFFFFF;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.09) 100%);
+  border: 4px solid #FFFFFF;
+  border-radius: 12px;
+}
